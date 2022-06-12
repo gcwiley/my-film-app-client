@@ -1,0 +1,14 @@
+<mat-toolbar color="primary">
+  <button mat-icon-button aria-label="menu icon">
+    <mat-icon>menu</mat-icon>
+  </button>
+
+  <span>My Film App</span>
+
+  <span class="spacer"></span>
+
+  <ng-container *ngIf="auth.user | async as user">
+    <button (click)="onClickSignOut()">Sign Out</button>
+    <p>Welcome {{ user.email }}</p>
+  </ng-container>
+</mat-toolbar>
