@@ -1,0 +1,9 @@
+<section class="film-cards">
+
+    <a routerLink="/films/{{ film._id }}" ngFor="let film of films">
+
+        <img src="{{ film.imageUrl }}" class="film-card" >
+        
+    </a>
+
+</section>
