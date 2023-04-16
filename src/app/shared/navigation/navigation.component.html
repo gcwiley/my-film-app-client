@@ -1,0 +1,33 @@
+<mat-toolbar color="primary">
+  <mat-toolbar-row class="title-header">
+    <a
+      mat-icon-button
+      class="home-icon"
+      aria-label="Home"
+      routerLink="/"
+      routerLinkActive="active"
+      color="primary"
+    >
+      <mat-icon>home</mat-icon>
+    </a>
+    <h1 class="display-1">My Film App</h1>
+    <button
+      mat-icon-button
+      (click)="toggleTheme()"
+      matTooltip="Toggle theme"
+      attr.aria-label="Switch to {{ isDark ? 'light' : 'dark' }} theme"
+      color="primary"
+    >
+      <mat-icon>brightness_medium</mat-icon>
+    </button>
+  </mat-toolbar-row>
+
+  <!-- NAV MENU -->
+  <mat-toolbar-row class="navigation-links">
+    <nav>
+      <a mat-button routerLink="/films" routerLinkActive="active">My Films</a>
+      <a mat-button routerLink="/about" routerLinkActive="active">About</a>
+      <a mat-button routerLink="/signin" routerLinkActive="active">Sign In</a>
+    </nav>
+  </mat-toolbar-row>
+</mat-toolbar>

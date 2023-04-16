@@ -1,9 +1,3 @@
-<section class="film-cards">
-
-    <a routerLink="/films/{{ film._id }}" ngFor="let film of films">
-
-        <img src="{{ film.imageUrl }}" class="film-card" >
-        
-    </a>
-
-</section>
+<div *ngIf="films" class="film-grid">
+  <app-film-card *ngFor="let item of films" [film]="item"></app-film-card>
+</div>

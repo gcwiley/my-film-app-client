@@ -1,31 +1,28 @@
 import { Component, OnInit } from '@angular/core';
 
-// Import Films Service
+// import the film service
 import { FilmService } from '../../services/film.service';
 
-// Import Film Type
-import { Film } from '../../types/types';
+// impor the film type
+import { Film } from '../../types/film.interface';
 
 @Component({
-  selector: 'app-film-list',
-  templateUrl: './films-list.component.html',
-  styleUrls: ['./films-list.component.scss'],
+  selector: 'app-film-grid',
+  templateUrl: './film-grid.component.html',
+  styleUrls: ['./film-grid.component.scss'],
 })
-export class FilmsListComponent implements OnInit {
-
-  isLoadingFilms = true;
+export class FilmGridComponent implements OnInit {
   films: Film[] = [];
 
-  constructor(public filmService: FilmService) { }
+  constructor(public filmService: FilmService) {}
 
   ngOnInit(): void {
-    this.getFilms()
+    this.getFilms();
   }
 
   getFilms(): void {
     this.filmService.getFilms().subscribe((films) => {
-      this.films = films
-      this.isLoadingFilms = false
-    })
+      this.films = films;
+    });
   }
 }

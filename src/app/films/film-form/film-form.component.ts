@@ -1,12 +1,12 @@
 import { Component, OnInit } from "@angular/core";
-import { UntypedFormBuilder, Validators } from "@angular/forms";
+import { FormBuilder, Validators } from "@angular/forms";
 import { ActivatedRoute, ParamMap, Router } from '@angular/router'
 
 // Import Film Service
 import { FilmService } from "../../services/film.service";
 
 // Import Film Type
-import { Film } from "src/app/types/types";
+import { Film } from "../../types/film.interface";
 
 @Component({
     selector: 'app-film-form',
@@ -29,7 +29,7 @@ export class FilmFormComponent implements OnInit {
     })
 
     constructor(
-        private formBuilder: UntypedFormBuilder,
+        private formBuilder: FormBuilder,
         private router: Router,
         public route: ActivatedRoute,
         private filmService: FilmService
@@ -51,7 +51,6 @@ export class FilmFormComponent implements OnInit {
                         releaseDate: this.film.releaseDate,
                         genre: this.film.genre,
                         summary: this.film.summary,
-                        imageUrl: this.film.imageUrl
                     })
                 })
             } else {

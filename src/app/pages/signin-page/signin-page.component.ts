@@ -3,9 +3,9 @@ import { Router } from '@angular/router';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 
 @Component({
-  selector: 'app-signin',
-  templateUrl: './signin.component.html',
-  styleUrls: ['./signin.component.scss'],
+  selector: 'app-signin-page',
+  templateUrl: './signin-page.component.html',
+  styleUrls: ['./signin-page.component.scss'],
 })
 export class SigninComponent implements OnInit {
   // add member variables

@@ -3,7 +3,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 // Import the Film Model
-import { Film } from '../types/types'
+import { Film } from '../types/film.interface'
 
 @Injectable({
     providedIn: 'root'
