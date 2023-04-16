@@ -1,5 +1,5 @@
 import { Component, OnInit } from "@angular/core";
-import { FormBuilder, Validators } from "@angular/forms";
+import { UntypedFormBuilder, Validators } from "@angular/forms";
 import { ActivatedRoute, ParamMap, Router } from '@angular/router'
 
 // Import Film Service
@@ -29,7 +29,7 @@ export class FilmFormComponent implements OnInit {
     })
 
     constructor(
-        private formBuilder: FormBuilder,
+        private formBuilder: UntypedFormBuilder,
         private router: Router,
         public route: ActivatedRoute,
         private filmService: FilmService
