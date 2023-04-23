@@ -9,7 +9,7 @@ import { Film } from 'src/app/types/film.interface';
 @Component({
   selector: 'app-recent-films',
   templateUrl: './recent-films.component.html',
-  styleUrls: ['./recent-films.component.css'],
+  styleUrls: ['./recent-films.component.scss'],
 })
 export class RecentFilmsComponent implements OnInit {
   recentFilms!: Film[];

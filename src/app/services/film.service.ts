@@ -66,21 +66,26 @@ export class FilmService {
 
   // SAVE METHODS
 
-  // POST: add a new Film to the server
-  addFilm(newFilm: Film): Observable<Film> {
-    return this.http.post<Film>(this.filmsUrl, newFilm, this.httpOptions);
+  // POST: add a new Film to the database
+  addFilm(newFilm: Film | any): Observable<Film> {
+    return this.http.post<Film>(this.filmsUrl, newFilm, this.httpOptions).pipe(
+      tap((newFilm: Film) => this.log(`added new film with id=${newFilm.id}`)),
+      catchError(this.handleError<Film>('addFilm'))
+    );
   }
 
-  // DELETE film by Id from the server
+  // DELETE film by Id from the database
   deleteFilm(id: string): Observable<Film[]> {
     const url = `${this.filmsUrl}/${id}`;
     return this.http.delete<Film[]>(url, this.httpOptions);
   }
 
-  // PATCH: update film on the server
-  updateFilm(id: string, film: Film): Observable<any> {
-    const url = `${this.filmsUrl}/${id}`;
-    return this.http.patch(url, film, this.httpOptions);
+  // PUT: update film on the server
+  updateFilm(film: Film | any): Observable<any> {
+    return this.http.put(this.filmsUrl, film, this.httpOptions).pipe(
+      tap(() => this.log(`updated film id=${film.id}`)),
+      catchError(this.handleError<any>('updateFilm'))
+    );
   }
 
   private handleError<T>(operation = 'operation', result?: T) {

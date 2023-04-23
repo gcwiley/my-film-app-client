@@ -1,8 +1,8 @@
 export interface Film {
-  _id?: string;
+  id?: string;
   title: string;
   director: string;
-  releaseDate: Date;
+  releaseDate: string;
   genre: string;
   summary: string;
 }

@@ -1,29 +1,36 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-// Import Route Guard
-import { RouteGuard } from './route.guard';
+// import the route guard
+import { RouteGuard } from './guards/route.guard';
 
-// Film Components
-import { FilmFormComponent } from './films/film-form/film-form.component'
-import { FilmsListComponent } from './films/film-grid/film-grid.component';
-import { FilmDetailsComponent } from './films/film-details/film-details.component';
+// import the main page
+import { MainPageComponent } from './pages/main-page/main-page.component';
 
-// Auth Components
-import { SigninComponent } from './auth/signin/signin.component';
-
-// About Page
+// import the about page
 import { AboutPageComponent } from './pages/about-page/about-page.component';
 
-// Not Found Page
+// import the create page
+import { CreatePageComponent } from './pages/create-page/create-page.component';
+
+// import the details page
+import { DetailsPageComponent } from './pages/details-page/details-page.component';
+
+// import the Not Found Page
 import { NotFoundPageComponent } from './pages/not-found-page/not-found-page.component';
 
+// import sign in page
+import { SigninPageComponent } from './pages/signin-page/signin-page.component';
+
+// import sign up page
+import { SignupPageComponent } from './pages/signup-page/signup-page.component';
+
 const routes: Routes = [
-  { path: '', redirectTo: '/films', pathMatch: 'full' },
-  { path: 'films', component: FilmsListComponent, pathMatch: 'full' },
-  { path: 'films/film/:id', component: FilmDetailsComponent },
-  { path: 'create', component: FilmFormComponent },
-  { path: 'signin', component: SigninComponent },
+  { path: '', component: MainPageComponent, pathMatch: 'full' },
+  { path: 'films/film/:id', component: DetailsPageComponent },
+  { path: 'create', component: CreatePageComponent },
+  { path: 'signin', component: SigninPageComponent },
+  { path: 'signup', component: SignupPageComponent },
   { path: 'about', component: AboutPageComponent },
   { path: '**', component: NotFoundPageComponent },
 ];
@@ -32,5 +39,4 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
 })
-export class AppRoutingModule { }
-
+export class AppRoutingModule {}

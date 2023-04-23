@@ -9,22 +9,11 @@ import { MaterialModule } from '../material.module';
 import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
 import { HeroComponent } from './hero/hero.component';
-import { NavigationComponent } from './navigation/navigation.component';
 // add new shared components here
 
 @NgModule({
   imports: [CommonModule, RouterModule, MaterialModule],
-  declarations: [
-    FooterComponent,
-    HeaderComponent,
-    HeroComponent,
-    NavigationComponent,
-  ],
-  exports: [
-    FooterComponent,
-    HeaderComponent,
-    HeroComponent,
-    NavigationComponent,
-  ],
+  declarations: [FooterComponent, HeaderComponent, HeroComponent],
+  exports: [FooterComponent, HeaderComponent, HeroComponent],
 })
 export class SharedComponentsModule {}

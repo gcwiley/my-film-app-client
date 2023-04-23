@@ -1,31 +1,44 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { AngularFireAuth } from '@angular/fire/compat/auth';
+
+// import the auth service
+import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'app-signin-page',
   templateUrl: './signin-page.component.html',
   styleUrls: ['./signin-page.component.scss'],
 })
-export class SigninComponent implements OnInit {
-  // add member variables
-  errorMessage: string = '';
-  emailValue: string = '';
-  passwordValue: string = '';
+export class SigninPageComponent {
+  // inject the router, form builder, and auth service
+  constructor(
+    private router: Router,
+    private formBuilder: FormBuilder,
+    private authService: AuthService
+  ) {}
 
-  constructor(private router: Router, private auth: AngularFireAuth) {}
+  // create the sign in form with email and password fields
+  signinForm = this.formBuilder.group({
+    email: ['', Validators.required],
+    password: ['', Validators.required],
+  });
 
-  ngOnInit(): void {}
-
-  onClickSignIn(): void {
-    // sets error message to empty string - resets error message
-    this.errorMessage = '';
-    // sign in with firebase auth
-    this.auth
-      .signInWithEmailAndPassword(this.emailValue, this.passwordValue)
-      // if auth - send user to homepage
-      .then(() => this.router.navigateByUrl('/'))
-      // if error - sends user error message
-      .catch((error) => (this.errorMessage = error.message));
+  // Sign in with email and password
+  // if successful, navigate user to the home page
+  onSubmitSignIn() {
+    this.authService
+      .SigninUserwithEmailAndPassword(
+        this.signinForm.value.email!,
+        this.signinForm.value.password!
+      )
+      .then(() => {
+        // navigates user to the main page
+        this.router.navigateByUrl('/');
+      })
+      // if error, display the error message
+      .catch((error) => {
+        window.alert(error.message);
+      });
   }
 }

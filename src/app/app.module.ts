@@ -2,66 +2,38 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms'; // for template forms
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms'; // use for both types of forms
 import { HttpClientModule } from '@angular/common/http';
-import { MatNativeDateModule } from '@angular/material/core';
 
 // Set Up Firebase
 import { AngularFireModule } from '@angular/fire/compat';
-import { environment } from '../environments/environment';
 
-// Angular Flex Layout
-import { FlexLayoutModule } from '@angular/flex-layout';
+// Load environment - FOLLOW UP
+import { environment } from '../environments/environment';
 
 // Angular Material Modules
 import { MaterialModule } from './material.module';
 
+// App Routing Module
+import { AppRoutingModule } from './app-routing.module';
+
+// import pipes
+import { PipesModule } from './pipes/pipe.module';
+
 // Main App Component
 import { AppComponent } from './app.component';
 
+// Page Components
+import { PageComponentsModule } from './pages/pages.module';
+
+// Shared Components
+import { SharedComponentsModule } from './shared/shared.module';
+
 // Film Components
-import { FilmsListComponent } from './films/film-grid/film-grid.component';
-import { FilmDetailsComponent } from './films/film-details/film-details.component';
-import { FilmFormComponent } from './films/film-form/film-form.component';
-
-// Layout Components
-import { HeaderComponent } from './layout/header/header.component';
-import { FooterComponent } from './layout/footer/footer.component';
-import { BannerComponent } from './layout/banner/banner.component';
-
-// Auth Components
-import { SigninComponent } from './auth/signin/signin.component';
-import { SignupComponent } from './auth/signup/signup.component';
-
-// Feedback Components
-import { FeedbackListComponent } from './feedback/feedback-list/feedback-list.component';
-import { FeedbackFormComponent } from './feedback/feedback-form/feedback-form.component';
-
-// App Routing Module
-import { AppRoutingModule } from './app-routing.module';
-import { NavMenuComponent } from './layout/nav-menu/nav-menu.component';
-import { CarouselComponent } from './shared/carousel/carousel.component';
-import { ThemePickerComponent } from './shared/theme-picker/theme-picker.component';
+import { FilmComponentsModule } from './films/films.module';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    FilmsListComponent,
-    FilmFormComponent,
-    FilmDetailsComponent,
-    HeaderComponent,
-    FooterComponent,
-    SigninComponent,
-    SignupComponent,
-    BannerComponent,
-    FeedbackListComponent,
-    FeedbackFormComponent,
-    SigninComponent,
-    NavMenuComponent,
-    CarouselComponent,
-    ThemePickerComponent,
-  ],
+  declarations: [AppComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
@@ -70,9 +42,11 @@ import { ThemePickerComponent } from './shared/theme-picker/theme-picker.compone
     MaterialModule,
     AppRoutingModule,
     HttpClientModule,
-    MatNativeDateModule,
-    FlexLayoutModule,
     AngularFireModule.initializeApp(environment.firebase),
+    PageComponentsModule,
+    FilmComponentsModule,
+    SharedComponentsModule,
+    PipesModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

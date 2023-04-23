@@ -1,7 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
-import { Film } from '../../types/types';
+// import the film type
+import { Film } from '../../types/film.interface';
+
+// import the film service
 import { FilmService } from '../../services/film.service';
 
 @Component({

@@ -6,7 +6,7 @@ import { NgForm } from '@angular/forms';
   templateUrl: './signup-page.component.html',
   styleUrls: ['./signup-page.component.scss'],
 })
-export class SignupComponent {
+export class SignupPageComponent {
 
   // recieves form as an argument
   onSubmit(form: NgForm) {

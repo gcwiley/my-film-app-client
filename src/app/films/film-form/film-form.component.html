@@ -32,10 +32,10 @@
             <!-- GENRE (genre)-->
             <mat-form-field class="full-width" appearance="outline">
                 <mat-label>Genre</mat-label>
-                <mat-select>
-                    <mat-option *ngFor="let genre of genres" [value]="genre.value">
-                        {{ genre.viewValue }}
-                    </mat-option>
+                <mat-select matNativeControl formControlName="genre">
+                  <mat-option value="horror">Horror</mat-option>
+                  <mat-option value="comedy">Comedy</mat-option>
+                  <mat-option value="Sci-Fi">Sci-Fi</mat-option>
                 </mat-select>
                 <mat-error>Please enter a genre for the film.</mat-error>
             </mat-form-field>

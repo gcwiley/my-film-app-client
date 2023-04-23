@@ -6,7 +6,7 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms'; // forms
 // import the material module
 import { MaterialModule } from '../material.module';
 
-// import pipe modules
+// import the pipe modules
 import { PipesModule } from '../pipes/pipe.module';
 
 // import film components
