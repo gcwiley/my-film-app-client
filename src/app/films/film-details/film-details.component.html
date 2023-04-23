@@ -1,0 +1,25 @@
+<mat-card class="film-details">
+  <mat-list>
+    <mat-list-item>
+      <p>{{ film.title }}</p>
+    </mat-list-item>
+
+    <mat-divider></mat-divider>
+
+    <mat-list-item>
+      <p>{{ film.director }}</p>
+    </mat-list-item>
+
+    <mat-divider></mat-divider>
+
+    <mat-list-item>
+      <p>{{ film.releaseDate | date }}</p>
+    </mat-list-item>
+
+    <mat-divider></mat-divider>
+
+    <mat-list-item>
+      <p>{{ film.summary }}</p>
+    </mat-list-item>
+  </mat-list>
+</mat-card>

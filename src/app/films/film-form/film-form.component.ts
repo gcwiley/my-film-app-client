@@ -2,10 +2,10 @@ import { Component, OnInit } from "@angular/core";
 import { FormBuilder, Validators } from "@angular/forms";
 import { ActivatedRoute, ParamMap, Router } from '@angular/router'
 
-// Import Film Service
+// Import the Film Service
 import { FilmService } from "../../services/film.service";
 
-// Import Film Type
+// import the film yype
 import { Film } from "../../types/film.interface";
 
 @Component({

@@ -1,0 +1,8 @@
+<mat-card class="recent-films-list">
+  <mat-list dense>
+    <mat-list-item *ngFor="let film of recentFilms">
+      <mat-icon mat-list-icon>folder</mat-icon>
+      <div mat-line>{{ film.title }}</div>
+    </mat-list-item>
+  </mat-list>
+</mat-card>

@@ -14,6 +14,7 @@ import { FilmCardComponent } from './film-card/film-card.component';
 import { FilmDetailsComponent } from './film-details/film-details.component';
 import { FilmFormComponent } from './film-form/film-form.component';
 import { FilmGridComponent } from './film-grid/film-grid.component';
+import { RecentFilmsComponent } from './recent-films/recent-films.component';
 // add new film components here
 
 @NgModule({
@@ -30,12 +31,14 @@ import { FilmGridComponent } from './film-grid/film-grid.component';
     FilmDetailsComponent,
     FilmFormComponent,
     FilmGridComponent,
+    RecentFilmsComponent,
   ],
   exports: [
     FilmCardComponent,
     FilmDetailsComponent,
     FilmFormComponent,
     FilmGridComponent,
+    RecentFilmsComponent,
   ],
 })
 export class FilmComponentsModule {}
